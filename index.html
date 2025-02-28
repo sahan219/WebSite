@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Header</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgb(0, 0, 0);
+            padding: 15px 20px;
+            position: relative;
+            z-index: 1;
+        }
+        .logo img {
+            height: 40px; /* Adjust the height of the logo */
+        }
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+        .nav-links li {
+            display: inline;
+        }
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover {
+            color: #f4a261;
+        }
+        /* Hamburger menu icon */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            justify-content: space-around;
+            width: 30px;
+            height: 25px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+        }
+        .hamburger div {
+            width: 30px;
+            height: 4px;
+            background-color: white;
+            border-radius: 10px;
+        }
+
+        /* Media query for mobile devices */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                width: 100%;
+                flex-direction: column;
+                text-align: center;
+                background-color: black;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                right: 0;
+                padding: 20px 0;
+            }
+            .nav-links.active {
+                display: flex;
+            }
+            .nav-links li {
+                margin: 10px 0;
+            }
+            .hamburger {
+                display: flex;
+            }
+        }
+
+        .video-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+        main {
+            flex: 1;
+        }
+        footer {
+            background-color: black;
+            color: white;
+            padding: 4px 0;
+            text-align: center;
+            margin-top: auto;
+            width: 100%;
+            position: relative;
+            background-image: url('https://i.postimg.cc/9XknN2nW/converted-image.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        footer a {
+            color: #f4a261;
+            text-decoration: none;
+        }
+        footer a:hover {
+            color: white;
+        }
+        footer img {
+            width: 100px;
+            height: auto;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <!-- Video background -->
+        <video class="video-background" autoplay muted loop>
+            <source src="your-video-file.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+        <!-- Logo image -->
+        <div class="logo">
+            <img src="https://i.postimg.cc/9XknN2nW/converted-image.jpg" alt="Your Company Logo">
+        </div>
+
+        <!-- Hamburger menu icon -->
+        <button class="hamburger" id="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </button>
+
+        <ul class="nav-links" id="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="products.html">Our Products</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <!-- New "Follow Us" Tab -->
+            <li><a href="followus.html">Follow Us</a></li>
+        </ul>
+    </header>
+
+    <!-- Main content -->
+    <main>
+        <!-- Your content goes here -->
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Your Company. All Rights Reserved.</p>
+        <p><a href="privacy-policy.html">Privacy Policy</a> | <a href="terms-conditions.html">Terms & Conditions</a></p>
+        <!-- Image in the footer -->
+        <img src="your-image-file.png" alt="Company Logo">
+    </footer>
+
+    <script>
+        // Toggle the navigation menu when the hamburger icon is clicked
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('nav-links');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
